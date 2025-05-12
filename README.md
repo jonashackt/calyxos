@@ -6,15 +6,17 @@ Your smartphone is spying on you. Just google it, like https://t3n.de/news/spion
 
 Especially see https://www.youtube.com/watch?v=u4rstFcPcjE
 
+"De-Googled phones have double the battery life, since they don't call home every second"
+
 So it might be a good idea to leave Apple behind ([already did that with my laptop](https://github.com/jonashackt/mac-to-linux)) - and also Google, because there are spying heavily using their Play Services. And now the AI trains comes into play also... 
 
 
-## Choose a distro based on AOSP (Android Open Source Project)
+# Choose a distro based on AOSP (Android Open Source Project)
 
 There are multiple OpenSource powered alternative OSses you can choose from. For example https://lineageos.org, https://e.foundation, https://grapheneos.org and https://calyxos.org. Most of the alternative OSses are based on the AOSP (Android Open Source Project).
 
 
-### CalyxOS vs. GrapheneOS
+## CalyxOS vs. GrapheneOS
 
 For me the most promising projects are CalyxOS and GrapheneOS, where there are slight differences:
 
@@ -24,8 +26,25 @@ https://www.reddit.com/r/PrivacyGuides/comments/13yft74/why_would_anyone_choose_
 https://threecats.com.au/why-use-grapheneos-rather-than-calyxos-degoogled-custom-alternative-android-os:
 
 * GrapheneOS seems to be the most frequently updated system
+* GrapheneOS Sandboxes the Google Play services as they are & the user controls, what they are allowed to send to Google. CalyxOS uses a re-implemented project called microG, which doesn't support every feature of the Googe Play services.
+
+https://news.ycombinator.com/item?id=28091157:
+> "Calyx has more focus on functionality and privacy rather than security. On Graphene, security is always priority #1.
+
+For example: Calyx provides MicroG (https://github.com/microg/GmsCore). This means you can talk to Google Play services, though in a better, more privacy-conscious way. MicroG is an open implentation of Google Play Services.
+
+However, MicroG requires signature spoofing: You need to install a fake Google certificate so that it can trick official apps into thinking they're talking to Google Play Services directly. This could technically be abused, though Calyx takes lots of precautions to prevent that. GrapheneOS with their security-first approach don't deem this worth the risk. __So with apps requiring play services you don't get push messages and network-based location checks, among others.__
+
+So, do you want an allround phone to use everyday (and use things like Uber, Facebook, etc) but more private and secure than AOSP, take Calyx. Do you want security over everything and are willing to compromise a bit on functionality and app compatibility (some apps will refuse to run without google play), pick Graphene."
+
+https://blog.usro.net/2024/11/grapheneos-vs-calyxos-the-ultimate-privacy-showdown/
 
 
+
+One of the best articles: https://yourdevice.ch/welches-customrom/
+
+* location sharing (incl. MAC addresses and SSIDs of surrounding Wifi & Bluetooth devices) with Mozilla isn't much better than with Google
+* app compatibility: will always be better with the standard Google apps in a sandbox (Graphene) than the microG re-implemented ones
 
 
 https://www.youtube.com/watch?v=u4rstFcPcjE advises to use CalyxOS, since the company he runs has the least customer issues with this OS.
@@ -36,15 +55,18 @@ Experience reports for CalyxOS:
 * https://www.reddit.com/r/CalyxOS/comments/sc9yut/my_experience_using_calyxos_on_a_pixel_6_pro/
 
 
-#### Compatibility with "special apps"
+So for me in the end it comes down to personal choice. As for a general purpose phone with __much more privacy__ than a default phone, I would suggest CalyxOS. 
 
-##### Banking Apps
+
+### Compatibility with "special apps"
+
+#### Banking Apps
 
 Banking apps seem to often work, but often also not: https://grapheneos.org/usage#banking-apps 
 
 Here's an overview including GitHub issues for every bank: https://privsec.dev/posts/android/banking-applications-compatibility-with-grapheneos/
 
-##### Android Auto
+#### Android Auto
 
 https://github.com/sn-00-x/aa4mg
 
@@ -63,10 +85,10 @@ It also features as great result in the radiation tests done by the connect maga
 
 
 
+# Going CalyxOS
 
 
-
-## Install on Google Pixel 9 Pro
+## Install CalyxOS on Google Pixel 9 Pro
 
 https://calyxos.org/install/devices/caiman/
 
@@ -77,3 +99,7 @@ https://calyxos.org/install/devices/caiman/
 Going back to stock Android: https://flash.android.com/welcome
 
 Browser privacy tests: https://privacytests.org/android
+
+Great overview on AOSP: https://yourdevice.ch/android-die-fassade-der-offenheit-broeckelt/
+
+https://www.androidauthority.com/google-android-development-aosp-3538503/
