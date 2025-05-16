@@ -10,11 +10,15 @@ Especially see https://www.youtube.com/watch?v=u4rstFcPcjE
 
 So it might be a good idea to leave Apple behind ([already did that with my laptop](https://github.com/jonashackt/mac-to-linux)) - and also Google, because there are spying heavily using their Play Services. And now the AI trains comes into play also... 
 
+General categories of privacy phones: https://www.youtube.com/watch?v=Cl2mPi_OeJs
 
-# Choose a distro based on AOSP (Android Open Source Project)
+
+
+# De-Googled Phones: Choose a distro based on AOSP (Android Open Source Project)
 
 There are multiple OpenSource powered alternative OSses you can choose from. For example https://lineageos.org, https://e.foundation, https://grapheneos.org and https://calyxos.org. Most of the alternative OSses are based on the AOSP (Android Open Source Project).
 
+https://www.youtube.com/watch?v=AkXQC0qz074
 
 ## CalyxOS vs. GrapheneOS
 
@@ -26,7 +30,7 @@ https://www.reddit.com/r/PrivacyGuides/comments/13yft74/why_would_anyone_choose_
 https://threecats.com.au/why-use-grapheneos-rather-than-calyxos-degoogled-custom-alternative-android-os:
 
 * GrapheneOS seems to be the most frequently updated system
-* GrapheneOS Sandboxes the Google Play services as they are & the user controls, what they are allowed to send to Google. CalyxOS uses a re-implemented project called microG, which doesn't support every feature of the Googe Play services.
+* GrapheneOS Sandboxes the Google Play services as they are & the user controls, what they are allowed to send to Google. CalyxOS uses a re-implemented project called microG, which doesn't support every feature of the Googe Play services
 
 https://news.ycombinator.com/item?id=28091157:
 > "Calyx has more focus on functionality and privacy rather than security. On Graphene, security is always priority #1.
@@ -56,6 +60,9 @@ Experience reports for CalyxOS:
 
 
 So for me in the end it comes down to personal choice. As for a general purpose phone with __much more privacy__ than a default phone, I would suggest CalyxOS. 
+
+
+__BUT__: There is this https://www.youtube.com/watch?v=4To-F6W1NT0 going on (same as the comments in news.ycombinator.com/item?id=28091157, so I will not use Graphene)
 
 
 ### Compatibility with "special apps"
@@ -92,6 +99,24 @@ It also features as great result in the radiation tests done by the connect maga
 
 https://calyxos.org/install/devices/caiman/
 
+The easiest way to install CalyxOS is to use the web installer. Use a browser like Chrome/ium for that, since Firefox won't work. There's not much to do to prepare for the web installer:
+
+### Remove SIM card
+On brand new devices, especially those obtained from a carrier, it’s better to remove the SIM card from the device before starting it for the first time, to help with the “OEM Unlocking” step below.
+
+### Enable Developer Options
+Settings → About Phone → tap Build number 7 times
+
+### Enable OEM Unlocking
+Settings → System → Advanced → Developer Options → OEM unlocking
+
+This step might fail if there is no internet connection. In that case, connect to a WiFi network and then try again.
+
+### Put your device into bootloader mode
+
+by restarting it and holding the volume down button until you see a red warning sign or green Android robot.
+
+Once your device is in bootloader mode, plug it into the computer or device you’re installing from.
 
 
 # Links
