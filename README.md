@@ -27,31 +27,17 @@ For me the most promising projects are CalyxOS and GrapheneOS, where there are s
 https://www.reddit.com/r/PrivacyGuides/comments/13yft74/why_would_anyone_choose_calyxos_over_grapheneos/:
 * main difference is: One seeks to share no information (GrapheneOS); the other is fine with sharing only fake information with google (CalyxOS). Choosing one of the other will be dependent on your threat model and that is a personal choice. 
 
-https://threecats.com.au/why-use-grapheneos-rather-than-calyxos-degoogled-custom-alternative-android-os:
-
 * GrapheneOS seems to be the most frequently updated system
-* GrapheneOS Sandboxes the Google Play services as they are & the user controls, what they are allowed to send to Google. CalyxOS uses a re-implemented project called microG, which doesn't support every feature of the Googe Play services
+* GrapheneOS Sandboxes the Google Play services as they are & the user controls, what they are allowed to send to Google. Calyx uses MicroG (https://github.com/microg/GmsCore) (like https://e.foundation). This means you can talk to Google Play services, though in a better, more privacy-conscious way. MicroG is an open implentation of Google Play Services.
 
 https://news.ycombinator.com/item?id=28091157:
 > "Calyx has more focus on functionality and privacy rather than security. On Graphene, security is always priority #1.
 
-For example: Calyx provides MicroG (https://github.com/microg/GmsCore). This means you can talk to Google Play services, though in a better, more privacy-conscious way. MicroG is an open implentation of Google Play Services.
-
-However, MicroG requires signature spoofing: You need to install a fake Google certificate so that it can trick official apps into thinking they're talking to Google Play Services directly. This could technically be abused, though Calyx takes lots of precautions to prevent that. GrapheneOS with their security-first approach don't deem this worth the risk. __So with apps requiring play services you don't get push messages and network-based location checks, among others.__
-
-So, do you want an allround phone to use everyday (and use things like Uber, Facebook, etc) but more private and secure than AOSP, take Calyx. Do you want security over everything and are willing to compromise a bit on functionality and app compatibility (some apps will refuse to run without google play), pick Graphene."
+"If you want an allround phone to use everyday (and use things like Uber, Facebook, etc) but more private and secure than AOSP, take Calyx. Do you want security over everything and are willing to compromise a bit on functionality and app compatibility (some apps will refuse to run without google play), pick Graphene."
 
 https://blog.usro.net/2024/11/grapheneos-vs-calyxos-the-ultimate-privacy-showdown/
 
-
-
-One of the best articles: https://yourdevice.ch/welches-customrom/
-
-* location sharing (incl. MAC addresses and SSIDs of surrounding Wifi & Bluetooth devices) with Mozilla isn't much better than with Google
-* app compatibility: will always be better with the standard Google apps in a sandbox (Graphene) than the microG re-implemented ones
-
-
-https://www.youtube.com/watch?v=u4rstFcPcjE advises to use CalyxOS, since the company he runs has the least customer issues with this OS.
+That's also the reason, why https://www.youtube.com/watch?v=u4rstFcPcjE advises to use CalyxOS, since the company offers support for multiple OpenSource OSses and they experience the least customer issues with this OS.
 
 
 Experience reports for CalyxOS:
@@ -61,23 +47,6 @@ Experience reports for CalyxOS:
 
 So for me in the end it comes down to personal choice. As for a general purpose phone with __much more privacy__ than a default phone, I would suggest CalyxOS. 
 
-
-__BUT__: There is this https://www.youtube.com/watch?v=4To-F6W1NT0 going on (same as the comments in news.ycombinator.com/item?id=28091157, so I will not use Graphene)
-
-
-### Compatibility with "special apps"
-
-#### Banking Apps
-
-Banking apps seem to often work, but often also not: https://grapheneos.org/usage#banking-apps 
-
-Here's an overview including GitHub issues for every bank: https://privsec.dev/posts/android/banking-applications-compatibility-with-grapheneos/
-
-#### Android Auto
-
-https://github.com/sn-00-x/aa4mg
-
-https://topjohnwu.github.io/Magisk/
 
 
 ## CalyxOS and GrapheneOS mainly support Google Pixel phones
@@ -119,6 +88,46 @@ by restarting it and holding the volume down button until you see a red warning 
 Once your device is in bootloader mode, plug it into the computer or device you’re installing from.
 
 
+If everything went fine, you should have CalyOS on your phone in no time:
+
+![](docs/calyxos-google-pixel9pro.jpg)
+
+
+## Compatibility with "special apps"
+
+### Banking Apps
+
+Banking apps seem to often work, but often also not: https://grapheneos.org/usage#banking-apps 
+
+Here's an overview including GitHub issues for every bank: https://privsec.dev/posts/android/banking-applications-compatibility-with-grapheneos/
+
+https://www.reddit.com/r/CalyxOS/comments/1gelv7o/does_calyx_os_work_with_banking_apps/
+
+
+
+### Android Auto
+
+CalyxOS has Android Auto support build in since February 2025 https://calyxos.org/news/2025/02/22/15-february-feature-update/ and it works really well. You need to install some Google apps from Aurora Store in the setup process to be to have Android Auto working. Like:
+
+* Google Speech Recognition & Synthesis App https://play.google.com/store/apps/details?id=com.google.android.tts
+
+In my car (VW Caddy 5), my Google Pixel 9 Pro with CalyxOS is working fine with Android Auto.
+
+See also https://github.com/sn-00-x/aa4mg
+
+
+### Duolingo
+
+You need to install Google Speech Recognition & Synthesis App from Aurora Store (also needed for Android Auto).
+
+As stated here https://duolingoguides.com/why-my-duolingo-mic-not-working/:
+
+"After installing Google TTS, you must give it the right permissions. This lets Duolingo and Google TTS use your microphone. You can change these settings in your device’s privacy manager, depending on your OS."
+
+Simply go to Authorization manager in the settings app and give Google TTS the permission to use your microphone.
+
+
+
 # Links
 
 Going back to stock Android: https://flash.android.com/welcome
@@ -128,3 +137,5 @@ Browser privacy tests: https://privacytests.org/android
 Great overview on AOSP: https://yourdevice.ch/android-die-fassade-der-offenheit-broeckelt/
 
 https://www.androidauthority.com/google-android-development-aosp-3538503/
+
+__BUT__: There is this https://www.youtube.com/watch?v=4To-F6W1NT0 going on (same as the comments in news.ycombinator.com/item?id=28091157, so I personally will not use Graphene)
